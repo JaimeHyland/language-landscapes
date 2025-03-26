@@ -47,6 +47,8 @@ return function (RouteBuilder $routes): void {
      * inconsistently cased URLs when used with `{plugin}`, `{controller}` and
      * `{action}` markers.
      */
+    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    
     $routes->setRouteClass(DashedRoute::class);
 
     $routes->scope('/', function (RouteBuilder $builder): void {
