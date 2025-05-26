@@ -1,0 +1,79 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-10-29 07:56+0100\n"
+"PO-Revision-Date: 2013-10-29 08:00+0100\n"
+"Last-Translator: whatever <what@eve.rr>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Errors/error400.ctp:22
+#: Errors/error500.ctp:22
+msgid "Error"
+msgstr "Blad"
+
+#: Errors/error400.ctp:24
+msgid "The requested address %s was not found on this server."
+msgstr "Rzadany adres %s nie zostal znaleziony na serwerze."
+
+#: Errors/error500.ctp:23
+msgid "An Internal Error Has Occurred."
+msgstr "Wystapil blad wewnetrzny."
+
+#: Layouts/default.ctp:55
+msgid "Home"
+msgstr "Strona glowna"
+
+#: Layouts/default.ctp:57;58;61
+msgid "Translation"
+msgstr "Tlumaczenia"
+
+#: Layouts/default.ctp:57;62
+msgid "Quality"
+msgstr "Jakosc"
+
+#: Layouts/default.ctp:57;63
+msgid "Workflows and tools"
+msgstr "tok pracy i narzedzia"
+
+#: Layouts/default.ctp:67;70
+msgid "Web Localization"
+msgstr "Lokalizacja WWW"
+
+#: Layouts/default.ctp:67;71
+msgid "Software Localization"
+msgstr "Lokalizacja oprogramowania"
+
+#: Layouts/default.ctp:68
+msgid "Localization"
+msgstr "Lokalizacja"
+
+#: Layouts/default.ctp:75
+msgid "Work with us"
+msgstr "Pracuj z nami"
+
+#: Layouts/default.ctp:86;191
+msgid "Who we are"
+msgstr "Kim jestesmy"
+
+#: Layouts/default.ctp:192
+msgid "AGB"
+msgstr ""
+
+#: Layouts/default.ctp:193
+msgid "Sitemap"
+msgstr "Mapa strony"
+
+#: Layouts/default.ctp:194
+msgid "Impressum"
+msgstr ""
+
+#: Layouts/error.ctp:20
+msgid "CakePHP: the rapid development php framework"
+msgstr "CakePHP: chuj ci w dupe"
+

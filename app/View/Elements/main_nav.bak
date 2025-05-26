@@ -1,0 +1,26 @@
+					<!-- HOW WE WORK -->
+					<li  class="dropdown <?php echo ( $title == 'PgLinkTransIssues' || $title == 'PgLinkI18nIssues' || $title == 'PgLinkIL10nIssues' || $title == 'PgLinkTheChallenge' || $title == 'PgLinkWorkflowsTools' ? 'active' : '' ); ?>">
+					<?php echo $this->Html->link(__('PgLinkHowWeWork'), '#', array('class'=>"dropdown-toggle", 'data-toggle'=>'dropdown')); ?>
+						<ul class="dropdown-menu">
+							<!-- WORKFLOWS -->
+							<li><?php echo $this->Html->link(__('PgLinkTheChallenge'), array('controller'=>'page','action'=>'the_challenge')); ?></li>
+
+							<!-- ISSUES -->
+							<li  class="dropdown-submenu">
+							<?php echo $this->Html->link(__('PgLinkIssues'), '#', array()); ?>
+								<ul class="dropdown-menu">
+									<!-- I18N ISSUES -->
+									<li><?php echo $this->Html->link(__('PgLinkI18nIssues'), array('controller'=>'page','action'=>'i18n_issues')); ?></li>
+
+									<!-- L10N ISSUES -->
+									<li><?php echo $this->Html->link(__('PgLinkIL10nIssues'), array('controller'=>'page','action'=>'l10n_issues')); ?></li>
+
+									<!-- TRANSLATION ISSUES -->
+									<li><?php echo $this->Html->link(__('PgLinkTransIssues'), array('controller'=>'page','action'=>'translation_issues')); ?></li>
+								</ul>
+							</li>
+
+							<!-- TECHNOLOGY -->
+							<li><?php echo $this->Html->link(__('PgLinkWorkflowsTools'), array('controller'=>'page','action'=>'technologies')); ?></li>
+						</ul>
+					</li>

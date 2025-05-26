@@ -1,0 +1,44 @@
+
+<h3><?php echo __("ClmServiceList") ?></h3>
+<H5>
+	<abbr title="<?php echo __("DesI18n") ?>">
+	<!--<?php echo $this->Html->link(__("LblI18n"),'/page/services#I18n'); ?>-->
+	<?php echo $this->Html->link(__('LblI18n'), array('controller'=>'page','action'=>'i18n_support')); ?>
+	</abbr>
+</H5>
+<H5>
+	<abbr title="<?php echo __("DesL10n") ?>">
+	<!--<?php echo $this->Html->link(__("LblL10n"),'/page/services#L10n'); ?>-->
+	<?php echo $this->Html->link(__('LblSoftwareL10n'), array('controller'=>'page','action'=>'software_l10n')); ?>
+</abbr>
+</H5>
+<H5>
+	<abbr title="<?php echo __("DesL10n") ?>">
+	<!--<?php echo $this->Html->link(__("LblL10n"),'/page/services#L10n'); ?>-->
+	<?php echo $this->Html->link(__('LblWebL10n'), array('controller'=>'page','action'=>'web_l10n')); ?>
+</abbr>
+</H5>
+<H5>
+<abbr title="<?php echo __("DesTranslation") ?>">
+	<!--<?php echo $this->Html->link(__("LblTranslation"),'/page/services#Xlation'); ?>-->
+	<?php echo $this->Html->link(__('LblTranslation'), array('controller'=>'page','action'=>'translation')); ?>
+</abbr>
+</H5>
+<H5>
+	<abbr title="<?php echo __("DesProofing") ?>">
+	<!--<?php echo $this->Html->link(__("LblProofing"),'/page/services#Proofing'); ?>-->
+	<?php echo $this->Html->link(__('LblProofing'), array('controller'=>'page','action'=>'proofing')); ?>
+</abbr>
+</H5>
+<H5>
+	<abbr title="<?php echo __("DesReview") ?>">
+	<!--<?php echo $this->Html->link(__("LblReview"),'/page/services#Review'); ?>-->
+	<?php echo $this->Html->link(__('LblReview'), array('controller'=>'page','action'=>'review')); ?>
+</abbr>
+</H5>
+<H5>
+	<abbr title="<?php echo __("DesTermMgt") ?>">
+	<!--<?php echo $this->Html->link(__("LblTermMgt"),'/page/services#TermMgt'); ?>-->
+	<?php echo $this->Html->link(__('LblTermMgt'), array('controller'=>'page','action'=>'terminology_managment')); ?>
+</abbr>
+</H5>
