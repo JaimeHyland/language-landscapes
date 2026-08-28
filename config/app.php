@@ -1,10 +1,12 @@
 <?php
 
 use Cake\Cache\Engine\FileEngine;
-use Cake\Database\Connection;
-use Cake\Database\Driver\Mysql;
 use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
+// use Cake\Log\Log;
+use Cake\Log\Engine\ConsoleLog;
+use Cake\Log\Engine\StreamLog;
+
 
 return [
     /*
@@ -215,155 +217,51 @@ return [
     'EmailTransport' => [
         'default' => [
             'className' => MailTransport::class,
-            /*
-             * The keys host, port, timeout, username, password, client and tls
-             * are used in SMTP transports
-             */
             'host' => 'localhost',
             'port' => 25,
             'timeout' => 30,
-            /*
-             * It is recommended to set these options through your environment or app_local.php
-             */
-            //'username' => null,
-            //'password' => null,
             'client' => null,
             'tls' => false,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
     ],
 
-    /*
-     * Email delivery profiles
-     *
-     * Delivery profiles allow you to predefine various properties about email
-     * messages from your application and give the settings a name. This saves
-     * duplication across your application and makes maintenance and development
-     * easier. Each profile accepts a number of keys. See `Cake\Mailer\Mailer`
-     * for more information.
-     */
     'Email' => [
         'default' => [
             'transport' => 'default',
             'from' => 'you@localhost',
-            /*
-             * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
-             */
-            //'charset' => 'utf-8',
-            //'headerCharset' => 'utf-8',
-        ],
-    ],
-
-    /*
-     * Connection information used by the ORM to connect
-     * to your application's datastores.
-     *
-     * ### Notes
-     * - Drivers include Mysql Postgres Sqlite Sqlserver
-     *   See vendor\cakephp\cakephp\src\Database\Driver for the complete list
-     * - Do not use periods in database name - it may lead to errors.
-     *   See https://github.com/cakephp/cakephp/issues/6471 for details.
-     * - 'encoding' is recommended to be set to full UTF-8 4-Byte support.
-     *   E.g set it to 'utf8mb4' in MariaDB and MySQL and 'utf8' for any
-     *   other RDBMS.
-     */
-    'Datasources' => [
-        /*
-         * These configurations should contain permanent settings used
-         * by all environments.
-         *
-         * The values in app_local.php will override any values set here
-         * and should be used for local and per-environment configurations.
-         *
-         * Environment variable-based configurations can be loaded here or
-         * in app_local.php depending on the application's needs.
-         */
-        'default' => [
-            'className' => Connection::class,
-            'driver' => Mysql::class,
-            'persistent' => false,
-            'timezone' => 'UTC',
-
-            /*
-             * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support
-             */
-            'encoding' => 'utf8mb4',
-
-            /*
-             * If your MySQL server is configured with `skip-character-set-client-handshake`
-             * then you MUST use the `flags` config to set your charset encoding.
-             * For e.g. `'flags' => [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']`
-             */
-            'flags' => [],
-            'cacheMetadata' => true,
-            'log' => false,
-
-            /*
-             * Set identifier quoting to true if you are using reserved words or
-             * special characters in your table or column names. Enabling this
-             * setting will result in queries built using the Query Builder having
-             * identifiers quoted when creating SQL. It should be noted that this
-             * decreases performance because each query needs to be traversed and
-             * manipulated before being executed.
-             */
-            'quoteIdentifiers' => false,
-
-            /*
-             * During development, if using MySQL < 5.6, uncommenting the
-             * following line could boost the speed at which schema metadata is
-             * fetched from the database. It can also be set directly with the
-             * mysql configuration directive 'innodb_stats_on_metadata = 0'
-             * which is the recommended value in production environments
-             */
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
-        ],
-
-        /*
-         * The test connection is used during the test suite.
-         */
-        'test' => [
-            'className' => Connection::class,
-            'driver' => Mysql::class,
-            'persistent' => false,
-            'timezone' => 'UTC',
-            'encoding' => 'utf8mb4',
-            'flags' => [],
-            'cacheMetadata' => true,
-            'quoteIdentifiers' => false,
-            'log' => false,
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
         ],
     ],
 
     /*
      * Configures logging options
      */
-    'Log' => [
-        'debug' => [
-            'className' => FileLog::class,
-            'path' => LOGS,
-            'file' => 'debug',
-            'url' => env('LOG_DEBUG_URL', null),
-            'scopes' => null,
-            'levels' => ['notice', 'info', 'debug'],
-        ],
-        'error' => [
-            'className' => FileLog::class,
-            'path' => LOGS,
-            'file' => 'error',
-            'url' => env('LOG_ERROR_URL', null),
-            'scopes' => null,
-            'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
-        ],
-        // To enable this dedicated query log, you need to set your datasource's log flag to true
-        'queries' => [
-            'className' => FileLog::class,
-            'path' => LOGS,
-            'file' => 'queries',
-            'url' => env('LOG_QUERIES_URL', null),
-            'scopes' => ['cake.database.queries'],
-        ],
+'Log' => [
+    'debug' => [
+        'className' => ConsoleLog::class,
+        'stream' => 'php://stdout', // Output to terminal (stdout)
+        'levels' => ['debug'], // Only log debug level to the terminal
     ],
+    'error' => [
+        'className' => FileLog::class,
+        'path' => LOGS,
+        'file' => 'error',
+        'url' => env('LOG_ERROR_URL', null),
+        'scopes' => null,
+        'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
+    ],
+    'queries' => [
+        'className' => FileLog::class,
+        'path' => LOGS,
+        'file' => 'queries',
+        'url' => env('LOG_QUERIES_URL', null),
+        'scopes' => ['cake.database.queries'],
+    ],
+    'console' => [
+        'className' => ConsoleLog::class, // Use ConsoleLog to write to terminal
+        'levels' => ['debug'], // Only log debug level to the terminal
+    ],
+],
 
     /*
      * Session configuration.

@@ -45,7 +45,7 @@ automated upgrades, so you have to do any updates manually.
 Read and edit the environment specific `config/app_local.php` and set up the
 `'Datasources'` and any other configuration relevant for your application.
 Other environment agnostic settings can be changed in `config/app.php`.
-
+T
 ## Layout
 
 The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS

@@ -10,6 +10,9 @@
 ######################
 .env
 
+# Local development database
+/data/*.sqlite
+
 # OS generated files #
 ######################
 .DS_Store
