@@ -1,0 +1,27 @@
+2024-07-22 13:42:53 Error: [MissingControllerException] Controller class Xmlrpc.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'Xmlrpc.phpController',
+  'plugin' => NULL,
+)
+Request URL: /xmlrpc.php
+Stack Trace:
+#0 /home/dpsblzqqa8n2/public_html/dev/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2024-08-21 03:26:05 Error: [MissingControllerException] Controller class Robots.txtController could not be found.
+Exception Attributes: array (
+  'class' => 'Robots.txtController',
+  'plugin' => NULL,
+)
+Request URL: /robots.txt
+Stack Trace:
+#0 /home/dpsblzqqa8n2/public_html/dev/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2025-02-06 11:19:55 Error: [MissingControllerException] Controller class Robots.txtController could not be found.
+Exception Attributes: array (
+  'class' => 'Robots.txtController',
+  'plugin' => NULL,
+)
+Request URL: /robots.txt
+Stack Trace:
+#0 /home/dpsblzqqa8n2/public_html/prod/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

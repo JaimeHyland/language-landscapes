@@ -1,0 +1,112 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-10-29 07:56+0100\n"
+"PO-Revision-Date: 2013-10-29 08:00+0100\n"
+"Last-Translator: whatever <what@eve.rr>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "MsgAddressNotFoundSvr"
+msgstr "Die Adresse %s konnte auf diesem Server nicht gefunden werden."
+
+msgid "MsgInternalError"
+msgstr "Ein interne Fehler ist aufgetreten."
+
+msgid "PgLinkHomePage"
+msgstr "Einstiegsseite"
+
+msgid "PgLinkXlation"
+msgstr "Übersetzung"
+
+msgid "PgLinkXlationProcess"
+msgstr "The translation process"
+
+msgid "PgLinkQuality"
+msgstr "Qualitätssicherung"
+
+msgid "PgLinkWorkflowsTools"
+msgstr "Technologies"
+
+msgid "PgLinkTheChallenge"
+msgstr "Web-Lokalisierung"
+
+msgid "PgLinkTheWorkflow"
+msgstr "Software-lokalisierung"
+
+msgid "PgLinkL10n"
+msgstr "Lokalisierung"
+
+msgid "PgLinkWorkWithUs"
+msgstr "Arbeiten Sie mit uns"
+
+msgid "PgLinkWhoWeAre"
+msgstr "Wer sind wir"
+
+msgid "PgLinkGenTandC"
+msgstr "AGB"
+
+msgid "PgLinkSiteMap"
+msgstr "Seitenplan"
+
+msgid "PgLinkLegalNotice"
+msgstr "Impressum"
+
+msgid "TxtFldlblFirstName"
+msgstr "Vorname"
+
+msgid "TxtFldlblLastName"
+msgstr "Nachname"
+
+msgid "TxtFldlblCompany"
+msgstr "Firma"
+
+msgid "TxtFldlblJobTitle"
+msgstr "Funktion"
+
+msgid "TxtFldlblEmail"
+msgstr "E-Mail"
+
+msgid "TxtFldlblPhone"
+msgstr "Telefon"
+
+msgid "LstboxlblSrcLang"
+msgstr "Quellsprache"
+
+msgid "LstboxlblTgtLang"
+msgstr "Zielsprache"
+
+msgid "FileSelFldDocForQuote"
+msgstr "Zu übersetzendes Dokument"
+
+msgid "InfoFileSellblDocForQuote"
+msgstr "Optional. Laden Sie soviele Dateien, sie wollen. Bis zu maximal 20mb pro Datei."
+
+msgid "TxtfldlblMessageBody"
+msgstr "Nachricht"
+
+msgid "ClmRequestQuote"
+msgstr "Gratis-Angebot beantragen"
+
+msgid "ClmContact"
+msgstr "Kontakt"
+
+msgid "BtnSend"
+msgstr "Versenden"
+
+msgid "BtnUpload"
+msgstr "Hochladen"
+
+msgid "StrDropToUpload"
+msgstr "Drag files and drop them here to upload"
+
+msgid "DropListDefault"
+msgstr "(wählen Sie eine)"

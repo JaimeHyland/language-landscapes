@@ -1,0 +1,446 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-10-29 07:56+0100\n"
+"PO-Revision-Date: 2013-10-29 08:00+0100\n"
+"Last-Translator: whatever <what@eve.rr>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "MsgAddressNotFoundSvr"
+msgstr "Die Adresse %s konnte auf diesem Server nicht gefunden werden."
+
+msgid "MsgInternalError"
+msgstr "Ein interne Fehler ist aufgetreten."
+
+msgid "PgLinkHomePage"
+msgstr "Einstiegsseite"
+
+msgid "PgLinkXlation"
+msgstr "Übersetzung"
+
+msgid "PgLinkXlationProcess"
+msgstr "Die Übersetzungsablauf"
+
+msgid "PgLinkQuality"
+msgstr "Qualitätssicherung"
+
+msgid "PgLinkWorkflowsTools"
+msgstr "Technologien"
+
+msgid "PgLinkTheChallenge"
+msgstr "Web-Lokalisierung"
+
+msgid "PgLinkTheWorkflow"
+msgstr "Software-lokalisierung"
+
+msgid "PgLinkL10n"
+msgstr "Lokalisierung"
+
+msgid "PgLinkI18n"
+msgstr "Beratung für Internationalisierung"
+
+msgid "PgLinkWebL10n"
+msgstr "Weblocalisierung"
+
+msgid "PgLinkSoftwareL10n"
+msgstr "Softwarelocalisierung"
+
+msgid "PgLinkTranslation"
+msgstr "Übersetzung"
+
+msgid "PgLinkTermMgt"
+msgstr "Terminologieverwaltung"
+
+msgid "PgLinkEditAndAdapt"
+msgstr "Textnachbearbeitung & -anpassung"
+
+msgid "PgLinkOptimize"
+msgstr "Bewertung vorhandener Inhalte"
+
+msgid "PgLinkWorkWithUs"
+msgstr "Mit uns arbeiten"
+
+msgid "PgLinkWhoWeAre"
+msgstr "Wer sind wir"
+
+msgid "PgLinkGenTandC"
+msgstr "AGB"
+
+msgid "PgLinkSiteMap"
+msgstr "Seitenplan"
+
+msgid "PgLinkLegalNotice"
+msgstr "Impressum"
+
+msgid "PgLinkOurServices"
+msgstr "Dienstleistungen"
+
+msgid "PgLinkHowWeWork"
+msgstr "Ansatz"
+
+msgid "PgLinkIssues"
+msgstr "Themen"
+
+msgid "PgLinkI18nIssues"
+msgstr "Themen in Internationalisierung"
+
+msgid "PgLinkIL10nIssues"
+msgstr "Themen in Lokalisierung"
+
+msgid "PgLinkTransIssues"
+msgstr "Themen in Übersetzung"
+
+msgid "TxtFldlblFirstName"
+msgstr "Vorname"
+
+msgid "TxtFldlblLastName"
+msgstr "Nachname"
+
+msgid "TxtFldlblCompany"
+msgstr "Firma"
+
+msgid "TxtFldlblJobTitle"
+msgstr "Funktion"
+
+msgid "TxtFldlblEmail"
+msgstr "E-Mail"
+
+msgid "TxtFldlblPhone"
+msgstr "Telefon"
+
+msgid "LstboxlblSrcLang"
+msgstr "Quellsprache"
+
+msgid "LstboxlblTgtLang"
+msgstr "Zielsprache"
+
+msgid "FileSelFldDocForQuote"
+msgstr "Zu übersetzendes Dokument"
+
+msgid "InfoFileSellblDocForQuote"
+msgstr "Optional. Laden Sie soviele Dateien, sie wollen. Bis zu maximal 20mb pro Datei."
+
+msgid "TxtfldlblMessageBody"
+msgstr "Nachricht"
+
+msgid "ClmRequestQuote"
+msgstr "Gratis-Angebot beantragen"
+
+msgid "ClmContact"
+msgstr "Kontakt"
+
+msgid "BtnSend"
+msgstr "Versenden"
+
+msgid "BtnUpload"
+msgstr "Hochladen"
+
+msgid "StrDropToUpload"
+msgstr "Drag files and drop them here to upload"
+
+msgid "DropListDefault"
+msgstr "(wählen Sie eine)"
+
+msgid "LblPhone"
+msgstr "Fon:"
+
+msgid "ValPhone"
+msgstr "(+49) (0)30 48628467"
+
+msgid "DesPhone"
+msgstr "Land line to our office"
+
+msgid "LblFax"
+msgstr "Fax:"
+
+msgid "ValFax"
+msgstr "(+49) (0)30 48628467"
+
+msgid "DesFax"
+msgstr "Fax line to our office"
+
+msgid "LblMobile"
+msgstr "Mobile:"
+
+msgid "ValMobile"
+msgstr "(+49) (0)177 2570734"
+
+msgid "DesMobile"
+msgstr "Jaime Hyland's business mobile number"
+
+msgid "BtnSend"
+msgstr "Send"
+
+msgid "BtnUpload"
+msgstr "Upload"
+
+msgid "ClmServiceList"
+msgstr "Unsere Dienstleistungen"
+
+msgid "DesI18n"
+msgstr "We can provide the support you need to ensure success in your internationalisation workflow."
+
+msgid "LblI18n"
+msgstr "Internationalisation support"
+
+msgid "DesL10n"
+msgstr "We work in consultation with you to ensure that your website or software package speaks the language your customers want to hear."
+
+msgid "LblL10n"
+msgstr "Software and web localisation."
+
+msgid "LblTranslation"
+msgstr "Translation"
+
+msgid "DesTranslation"
+msgstr "We do everything you need to make sure your translations are accurate, correct, consistent, elegant and effective!"
+
+msgid "LblProofing"
+msgstr "Textnachbearbeitung bzw. -anpassung"
+
+msgid "DesProofing"
+msgstr "We check your existing translations for accuracy, correctness, consistency, elegance and effectiveness, and that the localization of your site or software is complete, relevant, well-formatted and well translated."
+
+msgid "LblReview"
+msgstr "Reviewing existing translations"
+
+msgid "DesReview"
+msgstr "As an introductory offer, We can review the English localisation of your site for free! Click on the &quot;Request a review of your site&quot; tab above and fill in the slide-out form)!"
+
+msgid "LblTermMgt"
+msgstr "Terminologieverwaltung"
+
+msgid "DesTermMgt"
+msgstr "We can help you make sure that your terminology is consistent and accurate."
+
+msgid "Lblde"
+msgstr "Deutsch"
+
+msgid "Lblen"
+msgstr "Englisch"
+
+msgid "Lbles"
+msgstr "Spanisch"
+
+msgid "Lblit"
+msgstr "Italienisch"
+
+msgid "Lblhu"
+msgstr "Ungarisch"
+
+msgid "Lblen_US"
+msgstr "Englisch (US)"
+
+msgid "Lblde_DE"
+msgstr "Deutsch (Deutschland)
+
+msgid "Lblzh_CN"
+msgstr "Chinesisch (VRC)"
+
+msgid "Lblzh_TW"
+msgstr "Chinesisch (Taiwan)"
+
+msgid "Lblcs_CZ"
+msgstr "Tschechisch"
+
+msgid "Lblnl_BE"
+msgstr "Niederländisch (Belgien)"
+
+msgid "Lblnl"
+msgstr "Niederländisch"
+
+msgid "Lblnl_NL"
+msgstr "Niederländisch (Niederlande)"
+
+msgid "Lblen_AU"
+msgstr "English (Australia)"
+
+msgid "Lblen_GB"
+msgstr "Englisch (UK)"
+
+msgid "Lblen_CA"
+msgstr "Englisch (Kanada)"
+
+msgid "Lblfr"
+msgstr "Französisch"
+
+msgid "Lblja_JP"
+msgstr "Japanisch"
+
+msgid "Lblko_KR"
+msgstr "Koreanisch"
+
+msgid "Lblpl_PL"
+msgstr "Polnisch"
+
+msgid "Lblru_RU"
+msgstr "Russisch"
+
+msgid "Lblar"
+msgstr "Arabisch"
+
+msgid "Lblbg"
+msgstr "Bulgarisch"
+
+msgid "Lblca"
+msgstr "Catalanisch"
+
+msgid "Lblhr"
+msgstr "Croatisch"
+
+msgid "Lblda"
+msgstr "Dänisch"
+
+msgid "Lblen_IE"
+msgstr "Englisch (Irland)"
+
+msgid "Lblfi"
+msgstr "Finnisch"
+
+msgid "Lblel"
+msgstr "Griegisch"
+
+msgid "Lbliw_IL"
+msgstr "Hebräisch"
+
+msgid "Lblhi"
+msgstr "Hindi"
+
+msgid "Lblin_ID"
+msgstr "Indonesisch"
+
+msgid "Lbllv_LV"
+msgstr "Lettisch"
+
+msgid "Lbllt_LT"
+msgstr "Litauisch"
+
+msgid "Lblnb_NO"
+msgstr "Norwegisch (Bokmål)"
+
+msgid "Lblpt_BR"
+msgstr "Portugiesisch (Brazilian)"
+
+msgid "Lblpt_PT"
+msgstr "Portugiesisch (Portugal)"
+
+msgid "Lblro_RO"
+msgstr "Rumänisch"
+
+msgid "Lblsr_RS"
+msgstr "LblSerbisch"
+
+msgid "Lblsk_SK"
+msgstr "Slowakisch"
+
+msgid "Lblsl_SI"
+msgstr "Slowenisch"
+
+msgid "Lblsv"
+msgstr "Schwedisch"
+
+msgid "Lbltl_PH"
+msgstr "Tagalog"
+
+msgid "Lblth_TH"
+msgstr "Thai"
+
+msgid "Lbltr_TR"
+msgstr "Türkisch"
+
+msgid "Lbluk_UA"
+msgstr "Ukrainisch"
+
+msgid "Lblvi_VN"
+msgstr "Vietnamesisch"
+
+msgid "profProofer"
+msgstr "Proofreader"
+
+msgid "profTranslator"
+msgstr "Translator"
+
+msgid "profAnalyst"
+msgstr "Analyst"
+
+msgid "profWebDeveloper"
+msgstr "Web developer"
+
+msgid "profReviewer"
+msgstr "Reviewer"
+
+msgid "profWebDesigner"
+msgstr "Web designer"
+
+msgid "profCopywriter"
+msgstr "Copywriter"
+
+msgid "profLocaliser"
+msgstr "Spezialist in Lokalisierung"
+
+msgid "profTester"
+msgstr "Tester"
+
+msgid "copyrights"
+msgstr "Der gesamte Inhalt der Website www.language-landscapes.com ist Eigentum des Herausgebers und ist durch deutsches und internationales Urheberrecht geschützt &copy;."
+
+msgid "FormLabelSendCopyToClient"
+msgstr "Bitte senden Sie mir eine Kopie meiner Nachricht"
+
+msgid "FormLabelMessage"
+msgstr "Nachricht"
+
+msgid "thankYouMessage"
+msgstr "Vielen Dank für Ihre Nachricht"
+
+msgid "ourServicesImage"
+msgstr "menue_links_de_all.png"
+
+msgid "baummenuImage"
+msgstr "baummenue_de_all.png"
+
+# Work with us form
+# key by greg. Feel free to change them and adjust in code
+# file View/Elements/work_with_us_form.ctp
+
+msgid "TxtFldlblTranslation"
+msgstr "&Uuml;bersetzung"
+
+msgid "TxtFldlblLocalization"
+msgstr "Lokalisierung"
+
+msgid "TxtFldlblCopywriting"
+msgstr "Redaktion"
+
+msgid "TxtFldlblOptimization"
+msgstr "Textnachbearbeitung bzw. -anpassung"
+
+msgid "TxtFldlblInternationalization"
+msgstr "Web-Entwicklung/Software-Internationalisierung"
+
+msgid "FileSelFldDocCV"
+msgstr "Lebenslauf bzw. Perfil heraufladen"
+
+msgid "FormLabelLangpairs"
+msgstr "Sprachpaare"
+
+msgid "ClmWorkWithUs"
+msgstr "Schicken Sie uns Ihre Details"
+
+msgid "FormLabelMessage"
+msgstr "Nachricht"
+
+msgid "FormSubHeadServiceOffered"
+msgstr "Angebotene Dienstleistungen"
+
+msgid "FormDesLangPairs"
+msgstr "Bitte jede von Ihnen angebotene Quell- bzw. Zielsprache einpflegen (ggf. mit regionale Variant).  Quell bzw. Zielsprache sollte mit einem Minuszeichen (“-”) getrennt. Schreiben Sie bitte nur eine Sprachkombination pro Zeile."

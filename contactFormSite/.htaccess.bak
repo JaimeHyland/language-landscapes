@@ -1,0 +1,2 @@
+rewriteengine on
+rewriterule ^$ "" [R=302,L] #543cfd6b612f2
