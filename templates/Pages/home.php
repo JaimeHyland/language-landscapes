@@ -1,241 +1,81 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link      https://cakephp.org CakePHP(tm) Project
- * @since     0.10.0
- * @license   https://opensource.org/licenses/mit-license.php MIT License
- * @var \App\View\AppView $this
- */
-use Cake\Cache\Cache;
-use Cake\Core\Configure;
-use Cake\Core\Plugin;
-use Cake\Datasource\ConnectionManager;
-use Cake\Error\Debugger;
-use Cake\Http\Exception\NotFoundException;
+declare(strict_types=1);
 
+/** @var \App\View\AppView $this */
+$language = $language ?? 'eng';
+$isGerman = $language === 'deu';
 $this->disableAutoLayout();
-
-$checkConnection = function (string $name) {
-    $error = null;
-    $connected = false;
-    try {
-        ConnectionManager::get($name)->getDriver()->connect();
-        // No exception means success
-        $connected = true;
-    } catch (Exception $connectionError) {
-        $error = $connectionError->getMessage();
-        if (method_exists($connectionError, 'getAttributes')) {
-            $attributes = $connectionError->getAttributes();
-            if (isset($attributes['message'])) {
-                $error .= '<br />' . $attributes['message'];
-            }
-        }
-        if ($name === 'debug_kit') {
-            $error = 'Try adding your current <b>top level domain</b> to the
-                <a href="https://book.cakephp.org/debugkit/5/en/index.html#configuration" target="_blank">DebugKit.safeTld</a>
-            config and reload.';
-            if (!in_array('sqlite', \PDO::getAvailableDrivers())) {
-                $error .= '<br />You need to install the PHP extension <code>pdo_sqlite</code> so DebugKit can work properly.';
-            }
-        }
-    }
-
-    return compact('connected', 'error');
-};
-
-if (!Configure::read('debug')) :
-    throw new NotFoundException(
-        'Please replace templates/Pages/home.php with your own version or re-enable debug mode.'
-    );
-endif;
-
+$sidebarServiceLinks = [
+    ['slug' => 'internationalization', 'label' => $isGerman ? 'Beratung zur Intnernationalisierung' : 'Internationalization support'],
+    ['slug' => 'web-localization', 'label' => $isGerman ? 'Weblocalisierung' : 'Web localization'],
+    ['slug' => 'software-localization', 'label' => $isGerman ? 'Softwarelokalisierung' : 'Software localization'],
+    ['slug' => 'translation', 'label' => $isGerman ? 'Übersetzung' : 'Translation'],
+    ['slug' => 'terminology-management', 'label' => $isGerman ? 'Terminologiemanagement' : 'Terminology management'],
+    ['slug' => 'edit-and-adapt', 'label' => $isGerman ? 'Textkorrektur und Anpassung' : 'Text correction and adjustment'],
+    ['slug' => 'review', 'label' => $isGerman ? 'Inhaltsbewertung' : 'Content evaluation'],
+];
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?= $isGerman ? 'de' : 'en' ?>">
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        CakePHP: the rapid development PHP framework:
-        <?= $this->fetch('title') ?>
-    </title>
+    <title>Language Landscapes: <?= $isGerman ? 'Internationalisierung aus einer Hand' : 'quality internationalization' ?></title>
     <?= $this->Html->meta('icon') ?>
-
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake', 'home']) ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <?= $this->Html->css(['bootstrap.min', 'fresh', 'ekko-lightbox.min', 'home']) ?>
+    <?= $this->Html->script(['jquery-2.0.3.min', 'bootstrap.min', 'ekko-lightbox.min', 'main']) ?>
 </head>
 <body>
-    <header>
-        <div class="container text-center">
-            <a href="https://cakephp.org/" target="_blank" rel="noopener">
-                <img alt="CakePHP" src="https://cakephp.org/v2/img/logos/CakePHP_Logo.svg" width="350" />
-            </a>
-            <h1>
-                Welcome to CakePHP <?= h(Configure::version()) ?> Chiffon (🍰)
-            </h1>
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <div class="content">
-                <div class="row">
-                    <div class="column">
-                        <div class="message default text-center">
-                            <small>Please be aware that this page will not be shown if you turn off debug mode unless you replace templates/Pages/home.php with your own version.</small>
-                        </div>
-                        <div id="url-rewriting-warning" style="padding: 1rem; background: #fcebea; color: #cc1f1a; border-color: #ef5753;">
-                            <ul>
-                                <li class="bullet problem">
-                                    URL rewriting is not properly configured on your server.<br />
-                                    1) <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/en/installation.html#url-rewriting">Help me configure it</a><br />
-                                    2) <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/en/development/configuration.html#general-configuration">I don't / can't use URL rewriting</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <?php Debugger::checkSecurityKeys(); ?>
+    <div class="shell">
+        <header class="site-header">
+            <a href="<?= $this->Url->build(['_name' => 'language-home', 'language' => $language]) ?>"><img class="logo" src="<?= $this->Url->image('language_landscapes_logo.png') ?>" alt="Language Landscapes"></a>
+            <div class="language-switcher" aria-label="Language selection">
+                <a class="language-bubble language-bubble-en <?= !$isGerman ? 'selected' : '' ?>" href="<?= $this->Url->build(['_name' => 'language-home', 'language' => 'eng']) ?>" aria-label="English"></a>
+                <a class="language-bubble language-bubble-de <?= $isGerman ? 'selected' : '' ?>" href="<?= $this->Url->build(['_name' => 'language-home', 'language' => 'deu']) ?>" aria-label="Deutsch"></a>
+            </div>
+        </header>
+
+        <?= $this->element('banner_nav', ['language' => $language, 'active' => 'home']) ?>
+
+        <main>
+            <div class="page-columns row">
+                <aside class="contact-column col-md-3">
+                    <?= $this->element('sidebar_services', ['language' => $language]) ?>
+                </aside>
+                <div class="content-column col-md-9">
+            <section class="intro" id="about">
+                <h1><strong>Language Landscapes</strong>: <?= $isGerman ? 'Ihre Wahl für hochwertige Internationalisierung aus einer Hand' : 'your one-stop provider of quality internationalization' ?></h1>
+                <?php if ($isGerman) : ?>
+                    <p>Herzlich willkommen bei Language Landscapes, Ihrem Anbieter für internationale Kommunikation im Internet. Wir bieten Ihnen alles, was Sie brauchen, um die Sprache Ihrer Kunden zu sprechen.</p>
+                    <p>Sie möchten sicher sein, dass Ihre Internetpräsenz und Ihre gedruckten Veröffentlichungen effektiv und professionell kommunizieren?</p>
+                    <p>Wir bieten Ihnen diese Sicherheit.</p>
+                <?php else : ?>
+                    <p>Welcome to Language Landscapes, your provider of <a class="glossary-term" href="#glossary-internationalization" data-toggle="modal" data-target="#glossary-internationalization">internationalized</a> communication on the web. We provide everything you need to ensure that you're speaking the language of your customers.</p>
+                    <p>You need to be sure that your internet presence and printed publications communicate effectively and professionally, and that your message doesn't get lost in <a class="glossary-term" href="#glossary-translation" data-toggle="modal" data-target="#glossary-translation">translation</a>.</p>
+                    <p>We provide that security.</p>
+                <?php endif; ?>
+            </section>
+
+            <section class="service-tree" id="services">
+                <h2><?= $isGerman ? 'Unsere Leistungen' : 'Our services' ?></h2>
+                <div class="tree-layout">
+                    <div class="tree-image">
+                        <img src="<?= $this->Url->image($isGerman ? 'baummenue_de_all.png' : 'baummenue_en_all.png') ?>" alt="<?= $isGerman ? 'Leistungsübersicht' : 'Service overview' ?>">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <h4>Environment</h4>
-                        <ul>
-                        <?php if (version_compare(PHP_VERSION, '8.1.0', '>=')) : ?>
-                            <li class="bullet success">Your version of PHP is 8.1.0 or higher (detected <?= PHP_VERSION ?>).</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your version of PHP is too low. You need PHP 8.1.0 or higher to use CakePHP (detected <?= PHP_VERSION ?>).</li>
-                        <?php endif; ?>
+            </section>
 
-                        <?php if (extension_loaded('mbstring')) : ?>
-                            <li class="bullet success">Your version of PHP has the mbstring extension loaded.</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your version of PHP does NOT have the mbstring extension loaded.</li>
-                        <?php endif; ?>
-
-                        <?php if (extension_loaded('openssl')) : ?>
-                            <li class="bullet success">Your version of PHP has the openssl extension loaded.</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your version of PHP does NOT have the openssl extension loaded.</li>
-                        <?php endif; ?>
-
-                        <?php if (extension_loaded('intl')) : ?>
-                            <li class="bullet success">Your version of PHP has the intl extension loaded.</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your version of PHP does NOT have the intl extension loaded.</li>
-                        <?php endif; ?>
-
-                        <?php if (ini_get('zend.assertions') !== '1') : ?>
-                            <li class="bullet problem">You should set <code>zend.assertions</code> to <code>1</code> in your <code>php.ini</code> for your development environment.</li>
-                        <?php endif; ?>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h4>Filesystem</h4>
-                        <ul>
-                        <?php if (is_writable(TMP)) : ?>
-                            <li class="bullet success">Your tmp directory is writable.</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your tmp directory is NOT writable.</li>
-                        <?php endif; ?>
-
-                        <?php if (is_writable(LOGS)) : ?>
-                            <li class="bullet success">Your logs directory is writable.</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your logs directory is NOT writable.</li>
-                        <?php endif; ?>
-
-                        <?php $settings = Cache::getConfig('_cake_translations_'); ?>
-                        <?php if (!empty($settings)) : ?>
-                            <li class="bullet success">The <em><?= h($settings['className']) ?></em> is being used for core caching. To change the config edit config/app.php</li>
-                        <?php else : ?>
-                            <li class="bullet problem">Your cache is NOT working. Please check the settings in config/app.php</li>
-                        <?php endif; ?>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="column">
-                        <h4>Database</h4>
-                        <?php
-                        $result = $checkConnection('default');
-                        ?>
-                        <ul>
-                        <?php if ($result['connected']) : ?>
-                            <li class="bullet success">CakePHP is able to connect to the database.</li>
-                        <?php else : ?>
-                            <li class="bullet problem">CakePHP is NOT able to connect to the database.<br /><?= h($result['error']) ?></li>
-                        <?php endif; ?>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h4>DebugKit</h4>
-                        <ul>
-                        <?php if (Plugin::isLoaded('DebugKit')) : ?>
-                            <li class="bullet success">DebugKit is loaded.</li>
-                            <?php
-                            $result = $checkConnection('debug_kit');
-                            ?>
-                            <?php if ($result['connected']) : ?>
-                                <li class="bullet success">DebugKit can connect to the database.</li>
-                            <?php else : ?>
-                                <li class="bullet problem">There are configuration problems present which need to be fixed:<br /><?= $result['error'] ?></li>
-                            <?php endif; ?>
-                        <?php else : ?>
-                            <li class="bullet problem">DebugKit is <strong>not</strong> loaded.</li>
-                        <?php endif; ?>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="column links">
-                        <h3>Getting Started</h3>
-                        <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/en/">CakePHP Documentation</a>
-                        <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/en/tutorials-and-examples/cms/installation.html">The 20 min CMS Tutorial</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="column links">
-                        <h3>Help and Bug Reports</h3>
-                        <a target="_blank" rel="noopener" href="https://slack-invite.cakephp.org/">Slack</a>
-                        <a target="_blank" rel="noopener" href="https://github.com/cakephp/cakephp/issues">CakePHP Issues</a>
-                        <a target="_blank" rel="noopener" href="https://discourse.cakephp.org/">CakePHP Forum</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="column links">
-                        <h3>Docs and Downloads</h3>
-                        <a target="_blank" rel="noopener" href="https://api.cakephp.org/">CakePHP API</a>
-                        <a target="_blank" rel="noopener" href="https://bakery.cakephp.org">The Bakery</a>
-                        <a target="_blank" rel="noopener" href="https://book.cakephp.org/5/en/">CakePHP Documentation</a>
-                        <a target="_blank" rel="noopener" href="https://plugins.cakephp.org">CakePHP plugins repo</a>
-                        <a target="_blank" rel="noopener" href="https://github.com/cakephp/">CakePHP Code</a>
-                        <a target="_blank" rel="noopener" href="https://github.com/FriendsOfCake/awesome-cakephp">CakePHP Awesome List</a>
-                        <a target="_blank" rel="noopener" href="https://www.cakephp.org">CakePHP</a>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="column links">
-                        <h3>Training and Certification</h3>
-                        <a target="_blank" rel="noopener" href="https://cakefoundation.org/">Cake Software Foundation</a>
-                        <a target="_blank" rel="noopener" href="https://training.cakephp.org/">CakePHP Training</a>
-                    </div>
+            <section class="contact-strip" id="contact">
+                <div><h2><?= $isGerman ? 'Lassen Sie uns sprechen.' : 'Let’s talk.' ?></h2><p><?= $isGerman ? 'Erzählen Sie uns, was Sie vorhaben.' : 'Tell us what you are working on.' ?></p></div>
+                <a class="button" href="<?= $this->Url->build(['_name' => 'contact', 'language' => $language]) ?>" data-contact-email="105,110,102,111,64,108,97,110,103,117,97,103,101,45,108,97,110,100,115,99,97,112,101,115,46,99,111,109">Email</a>
+            </section>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+
+        <?= $this->element('glossary', ['isGerman' => $isGerman]) ?>
+
+        <?= $this->element('footer', ['language' => $language]) ?>
+    </div>
 </body>
 </html>

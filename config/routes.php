@@ -47,21 +47,47 @@ return function (RouteBuilder $routes): void {
      * inconsistently cased URLs when used with `{plugin}`, `{controller}` and
      * `{action}` markers.
      */
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-    
     $routes->setRouteClass(DashedRoute::class);
 
     $routes->scope('/', function (RouteBuilder $builder): void {
-        /*
-         * Here, we are connecting '/' (base path) to a controller called 'Pages',
-         * its action called 'display', and we pass a param to select the view file
-         * to use (in this case, templates/Pages/home.php)...
-         */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        $builder->connect('/', ['controller' => 'Pages', 'action' => 'home', 'eng'], ['_name' => 'home']);
+        $builder->connect('/{language}', ['controller' => 'Pages', 'action' => 'home'], [
+            'pass' => ['language'],
+            'language' => 'eng|deu',
+            '_name' => 'language-home',
+        ]);
+        $builder->connect('/{language}/who-we-are', ['controller' => 'Pages', 'action' => 'information', 'who-we-are'], [
+            'pass' => ['language'],
+            'language' => 'eng|deu',
+            '_name' => 'who-we-are',
+        ]);
+        $builder->connect('/{language}/impressum', ['controller' => 'Pages', 'action' => 'information', 'impressum'], [
+            'pass' => ['language'],
+            'language' => 'eng|deu',
+            '_name' => 'impressum',
+        ]);
+        $builder->connect('/{language}/privacy-policy', ['controller' => 'Pages', 'action' => 'information', 'privacy-policy'], [
+            'pass' => ['language'],
+            'language' => 'eng|deu',
+            '_name' => 'privacy-policy',
+        ]);
+        $builder->connect('/{language}/work-with-us', ['controller' => 'Pages', 'action' => 'information', 'work-with-us'], [
+            'pass' => ['language'],
+            'language' => 'eng|deu',
+            '_name' => 'work-with-us',
+        ]);
+        $builder->connect('/{language}/contact', ['controller' => 'Pages', 'action' => 'contact'], [
+            'pass' => ['language'],
+            'language' => 'eng|deu',
+            '_name' => 'contact',
+        ]);
+        $builder->connect('/{language}/{slug}', ['controller' => 'Pages', 'action' => 'service'], [
+            'pass' => ['language', 'slug'],
+            'language' => 'eng|deu',
+            'slug' => '[a-z-]+',
+            '_name' => 'service',
+        ]);
 
-        /*
-         * ...and connect the rest of 'Pages' controller's URLs.
-         */
         $builder->connect('/pages/*', 'Pages::display');
 
         /*
